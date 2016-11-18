@@ -1,0 +1,48 @@
+---
+mysql_port: 3306
+mysql_bind_address: "127.0.0.1"
+mysql_root_pass: P@$$w0rd
+connections: 1024
+server_name: localhost
+
+mysql_default_user: wordpress
+mysql_default_user_password: w0rdpr3s
+mysql_default_database: wordpress
+mysql_default_host_ip: localhost
+
+mysql_users: [
+  {
+    name: '{{ mysql_default_user }}',
+    password: '{{ mysql_default_user_password }}',
+    privs: '{{ mysql_default_database }}.*:ALL',
+    hosts: ['%']
+  }
+]
+
+mysql_dbs: [
+  '{{ mysql_default_database }}'
+]
+
+ubuntu_mysql_pkgs:
+  - mysql-server
+  - mysql-client
+  - python-mysqldb
+  - libmysqlclient-dev
+
+ubuntu_php_pkgs:
+  - unzip
+  - php5-fpm
+  - php5-cgi
+  - php5-cli
+  - php5-curl
+  - php5-json
+  - php5-odbc
+  - php5-tidy
+  - php5-common
+  - php5-xmlrpc
+  - php5-gd
+  - php-pear
+  - php5-dev
+  - php5-imap
+  - php5-mcrypt
+  - php5-mysqlnd

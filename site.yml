@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  user: root
+  sudo: yes
+  roles:
+    - LEMP
