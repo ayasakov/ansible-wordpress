@@ -1,3 +1,14 @@
 ---
 wordpress_document_root: '/var/www/html'
 wordpress_download_path: 'https://wordpress.org/latest.tar.gz'
+
+wordpress_garbage_files:
+- "wordpress"
+- "latest.tar.gz"
+
+vhost_name: wordpress.site
+host_name: 127.0.1.1
+
+db_name: wordpress
+db_username: wordpress
+db_password: w0rdpr3s
