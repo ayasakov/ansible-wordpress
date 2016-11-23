@@ -72,3 +72,7 @@
 - name: Generate Sample Data
   shell:
     '/etc/ansible/roles/generate_sample.sh'
+
+- name: Import Sample Data to DB
+  shell:
+    "mysql --local-infile wordpress -e \"LOAD DATA LOCAL INFILE '/tmp/wordpress' INTO TABLE wp_posts FIELDS TERMINATED BY ',' (post_author,post_title,post_name,post_type,post_content);\""
