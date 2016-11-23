@@ -1,0 +1,16 @@
+---
+- name: Download Wordpress
+  get_url:
+    url: '{{ wordpress_download_path }}'
+    dest: '{{ wordpress_document_root }}'
+    owner: 'www-data'
+    group: 'www-data'
+    validate_certs: no
+
+- name: Unpack Wordpress
+  unarchive:
+    src: '{{ magento_document_root }}/latest.tar.gz'
+    dest: '{{ magento_document_root }}'
+    owner: 'www-data'
+    group: 'www-data'
+    copy: no

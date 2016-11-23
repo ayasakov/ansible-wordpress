@@ -1,0 +1,7 @@
+- name: Ensure Document Root Exists
+  file:
+    path: '{{ magento_document_root }}'
+    state: directory
+    mode: 0755
+    owner: 'www-data'
+    group: 'www-data'

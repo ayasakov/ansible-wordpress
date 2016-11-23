@@ -1,0 +1,3 @@
+---
+wordpress_document_root: '/var/www/html'
+wordpress_download_path: 'https://wordpress.org/latest.tar.gz'
