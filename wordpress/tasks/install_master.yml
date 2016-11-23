@@ -34,8 +34,9 @@
     chdir: '{{ wordpress_document_root }}'
   with_items:
     - '*'
-  notify:
-    - Restart Nginx
+
+- name: restart nginx
+  service: name=nginx state=restarted
 
 - name: Delete Garbage Files
   file:
